@@ -3,5 +3,11 @@
 My first FastAPI project, built while learning backend development.
 
 ## Endpoints
-    `GET /` — Hello World
-    `GET /items/{item_id}` — Returns an item by ID
+- `POST /tasks` — Create a new task
+- `GET /tasks` — Return all tasks
+- `GET /tasks/{id}` — Return a single task by ID
+
+## Running locally
+```bash
+fastapi dev main.py
+```
