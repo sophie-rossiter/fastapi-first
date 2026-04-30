@@ -11,17 +11,17 @@ app = FastAPI()
 
 @app.post("/tasks/")
 def add_task(task: Task):
-    '''Accepts a Task in the request body, appends it to the task list, and returns the created task'''
+    '''Creates a new task and adds it to the task list'''
     tasks.append(task)
     return task
 
 @app.get("/tasks")
 def get_tasks():
-    """Responds to a GET request to /tasks by returning the tasks list"""
+    """Returns all tasks currently in the task list"""
     return tasks
 
 @app.get("/tasks/{id}")
 def get_task(id: int):
-    """Takes the task ID from the URL path, retrieves the corrosponding task from the task list and returns it"""
+    """Returns a single task by it's position in the task list"""
     current_task = tasks[id]
     return current_task
